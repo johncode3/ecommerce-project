@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - TechHub</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="js/script.js">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="homepage.html"><img src="image/logo.avif" class="logo" alt="TechHub Logo"></a>
+            <nav class="main-nav">
+                <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+                <a href="product.html" class="active"><i class="fas fa-shopping-bag"></i> Products</a>
+                <a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> Cart<span class="cart-count">0</span></a>
+                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="product-header">
+        <div class="container">
+            <h1 class="page-title">Welcome To Our Shop</h1>
+            <p class="page-description">
+                Discover the latest technology gadgets and devices at unbeatable prices. From smartphones to gaming gear, find everything you need at TechHub.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="product-container">       
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <!-- Category Filter -->
+                <div class="filter-widget">
+                    <h3 class="filter-title">Category</h3>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <input type="checkbox" id="phone">
+                            <label for="phone">Phones</label>
+                            <span class="item-count">(24)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="computer">
+                            <label for="computer">Computer</label>
+                            <span class="item-count">(50)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="speaker">
+                            <label for="speaker">Speaker</label>
+                            <span class="item-count">(42)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="watch">
+                            <label for="watch">Watch</label>
+                            <span class="item-count">(32)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="laptop">
+                            <label for="laptop">Laptop</label>
+                            <span class="item-count">(25)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="gaming-gear">
+                            <label for="gaming-gear">Gaming Gear</label>
+                            <span class="item-count">(60)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Brand Filter -->
+                <div class="filter-widget">
+                    <h3 class="filter-title">Brand</h3>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-apple">
+                            <label for="brand-apple">Apple</label>
+                            <span class="item-count">(12)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-asus">
+                            <label for="brand-asus">Asus</label>
+                            <span class="item-count">(50)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-jbl">
+                            <label for="brand-jbl">JBL</label>
+                            <span class="item-count">(5)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-garmin">
+                            <label for="brand-garmin">Garmin</label>
+                            <span class="item-count">(6)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-razer">
+                            <label for="brand-razer">Razer</label>
+                            <span class="item-count">(7)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-msi">
+                            <label for="brand-msi">MSI</label>
+                            <span class="item-count">(8)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-samsung">
+                            <label for="brand-samsung">Samsung</label>
+                            <span class="item-count">(8)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="brand-dell">
+                            <label for="brand-dell">Dell</label>
+                            <span class="item-count">(8)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="filter-widget">
+                    <h3 class="filter-title">Price Range</h3>
+                    <div class="price-content">
+                        <div>
+                            <label>Min</label>
+                            <p id="min-value">$50</p>
+                        </div>
+                        <div>
+                            <label>Max</label>
+                            <p id="max-value">$2000</p>
+                        </div>
+                    </div>
+                    <div class="range-slider">
+                        <input 
+                            type="range"
+                            class="min-price"
+                            value="100"
+                            min="10"
+                            max="2000"
+                            step="10">
+                    </div>
+                </div>
+
+                <!-- Rating Filter -->
+                <div class="filter-widget">
+                    <h3 class="filter-title">Rating</h3>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <input type="checkbox" id="rating-5">
+                            <label for="rating-5">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </label>
+                            <span class="item-count">(100)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="rating-4">
+                            <label for="rating-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </label>
+                            <span class="item-count">(50)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="rating-3">
+                            <label for="rating-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </label>
+                            <span class="item-count">(15)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="rating-2">
+                            <label for="rating-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </label>
+                            <span class="item-count">(10)</span>
+                        </li>
+                        <li class="category-item">
+                            <input type="checkbox" id="rating-1">
+                            <label for="rating-1">
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </label>
+                            <span class="item-count">(5)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filters-footer">
+                    <button class="btn btn--primary btn--block">
+                        Apply Filters
+                        <span class="filter-count">(0)</span>
+                    </button>
+                    <button class="btn btn--secondary btn--block">
+                        Reset to Default
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Product Content -->
+            <main class="product-main">
+                <!-- Product Toolbar -->
+                <div class="product-toolbar">
+                    <!-- Top Row: Product Count -->
+                    <div class="toolbar-top">
+                        <div class="products-count">Showing 1-12 of 54 products</div>
+                    </div>
+                    
+                    <!-- Bottom Row: Filters & Controls -->
+                    <div class="toolbar-bottom">
+                        <!-- Left: Active Filters -->
+                        <div class="toolbar-left">
+                            <div class="active-filters">
+                                <span class="filter-tag">
+                                    Phones 
+                                    <button>×</button>
+                                </span>
+                                <button class="clear-all">Clear All</button>
+                            </div>
+                        </div>
+
+                        <!-- Right: Search & Controls -->
+                        <div class="toolbar-right">
+                            <!-- Search Box -->
+                            <div class="search-within">
+                                <input type="text" placeholder="Search in results...">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+
+                            <!-- Sort & View Controls -->
+                            <div class="control-group">
+                                <div class="sort-options">
+                                    <select class="sort-select" aria-label="Sort products by">
+                                        <option value="featured">Featured</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                        <option value="newest">Newest Arrivals</option>
+                                        <option value="best-selling">Best Selling</option>
+                                        <option value="rating">Customer Rating</option>
+                                    </select>
+                                </div>
+
+                                <div class="view-option">
+                                    <button class="view-btn active" title="Grid View">
+                                        <i class="fas fa-th"></i>
+                                    </button>
+                                    <button class="view-btn" title="List View">
+                                        <i class="fas fa-list"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Grid -->
+                <div class="product-grid">
+                    <!-- Product 1 - Phone -->
+                    <div class="product-card" data-category="phone">
+                        <div class="product-badge new">New</div>
+                        <a href="iphone_17_pro_max.html" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/phone/iphone17proMax.webp" alt="iPhone 17 Pro Max">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Phone</span>
+                                <h3 class="product-title">iPhone 17 Pro Max</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-count">(245)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$1,680.00</span>
+                                    <span class="original-price">$1,999.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="1">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 2 - Phone -->
+                    <div class="product-card" data-category="phone">
+                        <div class="product-badge sale">Sale</div>
+                        <a href="product_detail.html?id=2" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/phone/samsung_galaxy_s24_ultra.jpg" alt="Samsung Galaxy S24 Ultra">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Phone</span>
+                                <h3 class="product-title">Samsung Galaxy S24 Ultra</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-count">(198)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$1,299.00</span>
+                                    <span class="original-price">$1,499.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="2">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 3 - Phone -->
+                    <div class="product-card" data-category="phone">
+                        <a href="product_detail.html?id=3" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/phone/google_pixel9_pro.webp" alt="Google Pixel 9 Pro">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Phone</span>
+                                <h3 class="product-title">Google Pixel 9 Pro</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="rating-count">(156)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$999.00</span>
+                                    <span class="original-price">$1,199.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="3">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 4 - Computer -->
+                    <div class="product-card" data-category="computer">
+                        <div class="product-badge new">New</div>
+                        <a href="product_detail.html?id=4" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/computer/apple-m4-macbook-pro.avif" alt="MacBook Pro M4">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Computer</span>
+                                <h3 class="product-title">MacBook Pro 16" M4</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-count">(312)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$2,499.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="4">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 5 - Computer -->
+                    <div class="product-card" data-category="computer">
+                        <div class="product-badge sale">Sale</div>
+                        <a href="product_detail.html?id=5" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/computer/dell_xps_15.webp" alt="Dell XPS 15">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Computer</span>
+                                <h3 class="product-title">Dell XPS 15 (2024)</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-count">(267)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$1,799.00</span>
+                                    <span class="original-price">$2,199.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="5">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 6 - Computer -->
+                    <div class="product-card" data-category="computer">
+                        <a href="product_detail.html?id=6" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/computer/asus_rog_zephyrus.jpg" alt="ASUS ROG Zephyrus">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Computer</span>
+                                <h3 class="product-title">ASUS ROG Zephyrus G16</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-count">(223)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$2,099.00</span>
+                                    <span class="original-price">$2,499.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="6">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 7 - Speaker -->
+                    <div class="product-card" data-category="speaker">
+                        <div class="product-badge new">New</div>
+                        <a href="product_detail.html?id=7" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/speaker/Sonos-Era-300.avif" alt="Sonos Era 300">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Speaker</span>
+                                <h3 class="product-title">Sonos Era 300</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-count">(178)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$449.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="7">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 8 - Speaker -->
+                    <div class="product-card" data-category="speaker">
+                        <div class="product-badge sale">Sale</div>
+                        <a href="product_detail.html?id=8" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/speaker/bose_soundlink.jpeg" alt="Bose SoundLink">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Speaker</span>
+                                <h3 class="product-title">Bose SoundLink Revolve+</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-count">(294)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$279.00</span>
+                                    <span class="original-price">$329.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="8">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 9 - Speaker -->
+                    <div class="product-card" data-category="speaker">
+                        <a href="product_detail.html?id=9" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/speaker/jbl_charge_5.png" alt="JBL Charge 5">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Speaker</span>
+                                <h3 class="product-title">JBL Charge 5</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span class="rating-count">(412)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$179.00</span>
+                                    <span class="original-price">$219.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="9">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 10 - Watch -->
+                    <div class="product-card" data-category="watch">
+                        <div class="product-badge new">New</div>
+                        <a href="product_detail.html?id=10" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/watch/apple_watch_ultra_2.jpg" alt="Apple Watch Ultra 2">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Watch</span>
+                                <h3 class="product-title">Apple Watch Ultra 2</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-count">(387)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$799.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="10">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 11 - Watch -->
+                    <div class="product-card" data-category="watch">
+                        <div class="product-badge sale">Sale</div>
+                        <a href="product_detail.html?id=11" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/watch/samsung_galaxy_watch_6.webp" alt="Samsung Galaxy Watch 6">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Watch</span>
+                                <h3 class="product-title">Samsung Galaxy Watch 6 Classic</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-count">(341)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$349.00</span>
+                                    <span class="original-price">$429.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="11">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product 12 - Watch -->
+                    <div class="product-card" data-category="watch">
+                        <a href="product_detail.html?id=12" class="product-link">
+                            <div class="product-image">
+                                <img src="product_image/watch/garmin_fenix_7_pro.webp" alt="Garmin Fenix 7 Pro">
+                                <div class="product-action">
+                                    <button type="button" class="btn-icon" title="Add to Wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="btn-icon quick-view" title="Quick View">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-detail">
+                                <span class="product-category">Watch</span>
+                                <h3 class="product-title">Garmin Fenix 7 Pro</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="rating-count">(276)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$899.00</span>
+                                    <span class="original-price">$999.00</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-block add-to-cart" data-id="12">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pagination (Optional) -->
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechHub</h3>
+                    <p>Your one-stop shop for all your tech needs. Discover the latest technology at unbeatable prices.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechHub. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

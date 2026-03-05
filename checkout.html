@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - TechHub</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+             <a href="homepage.html"><img src="image/logo.avif" class="logo" alt="TechHub Logo"></a>
+            <nav class="main-nav">
+                <a href="homepage.html"><i class="fas fa-home"></i>Home</a>
+                <a href="product.html"><i class="fas fa-shopping-bag"></i>Products</a>
+                <a href="cart.html" class="cart-link active"><i class="fas fa-shopping-cart"></i>Cart<span class="cart-count">2</span></a>
+                <a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="checkout">
+        <div class="checkout-page">
+            <!-- Left: Billing Details -->
+            <div class="checkout-left">
+                <div class="checkout-step">
+                    <h2><i class="fas fa-user"></i> Billing Details</h2>
+                    <form class="bill-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">First Name *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name (Optional)</label>
+                            <input type="text" id="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Street Address *</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apartment">Apartment, Suite, etc. (Optional)</label>
+                            <input type="text" id="apartment">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Town/City *</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP Code *</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="save-info">
+                            <label for="save-info">Save this information for next time</label>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Optional: Shipping Method Section -->
+                <div class="checkout-step">
+                    <h2><i class="fas fa-shipping-fast"></i> Shipping Method</h2>
+                    <div class="shipping-options">
+                        <div class="shipping-option">
+                            <input type="radio" name="shipping" id="free-shipping" checked>
+                            <label for="free-shipping">
+                                <span class="shipping-name">Free Shipping</span>
+                                <span class="shipping-time">5-7 Business Days</span>
+                                <span class="shipping-price">FREE</span>
+                            </label>
+                        </div>
+                        <div class="shipping-option">
+                            <input type="radio" name="shipping" id="express-shipping">
+                            <label for="express-shipping">
+                                <span class="shipping-name">Express Shipping</span>
+                                <span class="shipping-time">2-3 Business Days</span>
+                                <span class="shipping-price">$9.99</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right: Order Summary -->
+            <div class="checkout-right">
+                <div class="order-summary">
+                    <h2><i class="fas fa-receipt"></i> Order Summary</h2>
+                    
+                    <!-- Order Items -->
+                    <div class="order-items">
+                        <div class="order-item">
+                            <img src="product_image/phone/iPhone 17 pro max/iphone 17 pro max orange color.webp" alt="iPhone 17 Pro Max">
+                            <div class="item-details">
+                                <h4>iPhone 17 Pro Max</h4>
+                                <span class="item-variant">Orange • 256GB</span>
+                            </div>
+                            <div class="item-price">$999.99</div>
+                        </div>
+                        <div class="order-item">
+                            <img src="product_image/computer/asus_rog_zephyrus.jpg" alt="Asus Rog Zephyrus">
+                            <div class="item-details">
+                                <h4>Asus Rog Zephyrus</h4>
+                                <span class="item-variant">White • RTX 5090</span>
+                            </div>
+                            <div class="item-price">$4,999.00</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon Section (Move here from bottom) -->
+                    <div class="coupon-section">
+                        <h4><i class="fas fa-tag"></i> Have a coupon?</h4>
+                        <div class="coupon-input">
+                            <input type="text" placeholder="Enter coupon code">
+                            <button type="button" class="coupon-btn">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Totals -->
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span>$5,998.99</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipping</span>
+                            <span class="free">FREE</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax</span>
+                            <span>$80.00</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total</span>
+                            <span class="total-price">$6,078.99</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Method -->
+                    <div class="payment-method">
+                        <h4><i class="fas fa-credit-card"></i> Payment Method</h4>
+                        <div class="payment-options">
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="bank-transfer" checked>
+                                <label for="bank-transfer">
+                                    <i class="fas fa-university"></i>
+                                    <span>Direct Bank Transfer</span>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="paypal">
+                                <label for="paypal">
+                                    <i class="fab fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="credit-card">
+                                <label for="credit-card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="cod">
+                                <label for="cod">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>Cash on Delivery</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms & Place Order -->
+                    <div class="terms-agreement">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="terms.html">Terms & Conditions</a></label>
+                    </div>
+                    
+                    <button type="submit" class="place-order-btn">
+                        <i class="fas fa-lock"></i> Place Order
+                    </button>
+                    
+                    <div class="secure-checkout">
+                        <i class="fas fa-shield-alt"></i> Your payment is secure and encrypted
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechHub</h3>
+                    <p>Your one-stop shop for all your tech needs. Discover the latest technology at unbeatable prices.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Return Policy</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechHub. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
