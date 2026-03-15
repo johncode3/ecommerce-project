@@ -1,0 +1,140 @@
+/* =========================================== */
+/* REVIEWS COMPONENT STYLES                    */
+/* =========================================== */
+
+/* Review summary */
+.average-rating {
+    font-size: 1rem;
+    color: #666;
+    font-weight: normal;
+    margin-left: 15px;
+    background: #f8f9fa;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.review-summary {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.rating-bars {
+    max-width: 400px;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.rating-bar .stars {
+    color: #7e5800;
+    width: 70px;
+}
+
+.rating-bar .bar {
+    flex: 1;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.rating-bar .fill {
+    height: 100%;
+    background: #ffb400;
+    border-radius: 4px;
+}
+
+.rating-bar .count {
+    width: 40px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Individual reviews */
+.review-item {
+    padding: 25px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.review-author {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.review-rating i {
+    color: #ffb400;
+    font-size: 0.9rem;
+}
+
+.review-rating span {
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.review-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.review-title {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.review-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.review-helpful {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.helpful-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.helpful-btn:hover {
+    border-color: #0066cc;
+    color: #0066cc;
+}
