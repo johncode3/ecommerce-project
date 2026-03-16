@@ -3,8 +3,10 @@
 =============== */
 /* Product Detail Container */
 .product-detail-container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 30px 50px;
+    padding: 40px 20px 60px;
+    width: 100%;
 }
 
 /* Main Content Grid */
@@ -12,6 +14,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    margin-bottom: 60px;
 }
 
 /* Images Column */
@@ -19,8 +22,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
+/* Main image container */
 .product-detail-content .main-image {
     width: 100%;
     height: 400px;
@@ -38,32 +43,40 @@
 .product-detail-content .main-image img {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
-.product-detail-content .main-image:hover img {
-    transform: scale(1.05);
-}
 
+/* Thumbnail strip */
 .product-detail-content .thumbnail-strip {
     display: flex;
-    gap: 50px;
+    gap: 20px;
     overflow-x: auto;
     padding: 10px 5px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
 }
 
 .product-detail-content .thumbnail-strip::-webkit-scrollbar {
-    height: 4px;
+    height: 6px;
 }
 
 .product-detail-content .thumbnail-strip::-webkit-scrollbar-thumb {
     background: #ccc;
-    border-radius: 2px;
+    border-radius: 10px;
 }
 
+.product-detail-content .thumbnail-strip::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Thumbnail images */
 .product-detail-content .thumb {
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer;
@@ -380,4 +393,122 @@
 .btn-lg a{
     text-decoration: none;
     color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .product-detail-content .main-image {
+        height: 350px;
+        padding: 25px;
+    }
+    
+    .product-detail-content .thumb {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .product-detail-content .thumbnail-strip {
+        gap: 15px;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+    .product-detail-content .product-images {
+        gap: 15px;
+    }
+    
+    .product-detail-content .main-image {
+        height: 300px;
+        padding: 20px;
+    }
+    
+    .product-detail-content .thumbnail-strip {
+        gap: 12px;
+        padding: 8px 0;
+        justify-content: flex-start;
+    }
+    
+    .product-detail-content .thumb {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 576px) {
+    .product-detail-content .main-image {
+        height: 280px;
+        padding: 15px;
+    }
+    
+    .product-detail-content .thumb {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .product-detail-content .thumbnail-strip {
+        gap: 10px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+    .product-detail-content .main-image {
+        height: 240px;
+        padding: 10px;
+    }
+    
+    .product-detail-content .thumb {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .product-detail-content .thumbnail-strip {
+        gap: 8px;
+    }
+}
+
+/* Touch devices - better scrolling */
+@media (hover: none) and (pointer: coarse) {
+    .product-detail-content .thumbnail-strip {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+    
+    .product-detail-content .thumb {
+        min-width: 80px;
+        min-height: 80px;
+    }
+}
+
+/* Fix for main image on all screens */
+.product-detail-content .main-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Make sure the whole product detail page is responsive */
+@media (max-width: 768px) {
+    .product-detail-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Center images on mobile */
+    .product-detail-content .product-images {
+        align-items: center;
+    }
+    
+    .product-detail-content .main-image {
+        max-width: 100%;
+    }
+    
+    .product-detail-content .thumbnail-strip {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
