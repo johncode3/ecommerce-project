@@ -6,6 +6,9 @@
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-bottom: 60px; /* Space for fixed nav */
+    }
     .main-header {
         padding-bottom: 0;
     }

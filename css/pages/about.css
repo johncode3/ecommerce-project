@@ -14,8 +14,8 @@ About Us
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center; /* This centers vertically */
-    gap: 10px;
-    margin-left: 100px;
+    gap: 24px;
+    margin-left: 0;
     min-height: 500px; /* Make section tall enough */
 }
 
@@ -28,7 +28,7 @@ About Us
 
 .man-text {
     align-self: center; /* Makes text align with middle of man */
-    margin-left: -100px;
+    margin-left: 0;
 }
 
 /* SECTION 2: Founder split */
@@ -37,6 +37,7 @@ About Us
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: start; /* Or center if you want */
+    justify-content: center;
     margin-top: 60px;
 }
 
@@ -50,7 +51,8 @@ About Us
     padding: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     text-align: center;
-    margin: 0 0 0 150px;
+    margin: 0 auto;
+    width: min(360px, 100%);
 }
 
 .profile-pic {
@@ -68,12 +70,13 @@ About Us
         text-align: center;
     }
     .man-container{
-        margin-left: -100px;
+        margin-left: 0;
     }
     .kakkada-card{
         width:300px;
-        margin-left: 60px;
-        
+        margin: 0 auto;
+        justify-content: center;
+        offset: 0;
     }
     .hero-split,
     .founder-split {
